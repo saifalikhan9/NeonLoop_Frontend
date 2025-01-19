@@ -1,7 +1,7 @@
 import axios from "axios";
 import { data } from "react-router-dom";
 
-const backendUrl = "http://localhost:8000/api/v1";
+const BackendUrl = import.meta.env.VITE_Url;
 const token = localStorage.getItem("accessToken");
 export const signupfn = async (data) => {
   try {

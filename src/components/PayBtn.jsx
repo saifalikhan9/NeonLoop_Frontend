@@ -17,7 +17,7 @@ const PayButn = ({ orderData }) => {
 
   //   const { url, user, token, cart, selectedAddress,clearCart } = useContext(UserContext);
   const { selectedAddress, clearCart } = useContext(UserContext);
-  const url = "http://localhost:8000/";
+  const BackendUrl = import.meta.env.VITE_Url;
   const token = localStorage.getItem("accessToken");
 
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ const PayButn = ({ orderData }) => {
 
     try {
       const res = await axios.post(
-        `${url}api/v1/payment/pay`,
+        `${BackendUrl}payment/pay`,
         {
           totalAmount,
           selectedAddress,
@@ -83,7 +83,7 @@ const PayButn = ({ orderData }) => {
 
           try {
             const res = await axios.post(
-              `${url}api/v1/payment/verify`,
+              `${BackendUrl}payment/verify`,
               paymentData,
               {
                 headers: {

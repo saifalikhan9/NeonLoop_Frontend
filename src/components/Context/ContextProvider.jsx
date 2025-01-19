@@ -3,7 +3,10 @@ import UserContext from "./ContextApi";
 import axios from "axios";
 import { deletefn } from "@/lib/api";
 
-const BackendUrl = "http://localhost:8000/api/v1";
+
+
+const BackendUrl = import.meta.env.VITE_Url
+
 
 export const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
