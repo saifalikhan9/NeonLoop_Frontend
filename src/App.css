@@ -1,0 +1,130 @@
+@keyframes neonPulse {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.8; filter: brightness(1.2); }
+}
+
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.5; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.neon-text {
+  color: #fff;
+  text-shadow: 
+    0 0 7px #000000,
+    0 0 21px #0077be,
+    0 0 42px #0077be,
+    0 0 82px #0077be;
+  animation: neonPulse 1.5s ease-in-out infinite, neonFlicker 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.subtle-neon-text {
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #ff00a2;
+}
+
+.neon-border {
+  box-shadow: 
+    0 0 0.1rem #fff,
+    0 0 0.2rem #fff,
+    0 0 2rem #0077be,
+    0 0 0.8rem #0077be,
+    0 0 2.8rem #0077be,
+    inset 0 0 1.3rem #0077be;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.neon-button {
+  position: relative;
+  display: inline-flex;
+  padding: 30px 30px;
+  color: #0077be;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  letter-spacing: 4px;
+  border: 1px solid #0077be;
+  background: transparent;
+}
+
+.neon-button:hover {
+  background: #0077be;
+  color: #000;
+  box-shadow: 0 0 5px #0077be,
+              0 0 25px #0077be,
+              0 0 50px #0077be,
+              0 0 200px #0077be;
+}
+
+.neon-button span {
+  position: absolute;
+  display: block;
+}
+
+
+@keyframes neonBtnAnim1 {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+
+
+@keyframes neonBtnAnim2 {
+  0% { top: -100%; }
+  50%, 100% { top: 100%; }
+}
+
+
+
+@keyframes neonBtnAnim3 {
+  0% { right: -100%; }
+  50%, 100% { right: 100%; }
+}
+
+
+@keyframes neonBtnAnim4 {
+  0% { bottom: -100%; }
+  50%, 100% { bottom: 100%; }
+}
+
+.bg-gray-800 {
+  background-color: #1f2937;
+}
+
+.border-gray-700 {
+  border-color: #374151;
+}
+
+.color-picker button {
+  transition: transform 0.2s ease;
+}
+
+.color-picker button:hover {
+  transform: scale(1.1);
+}
+/* 
+@media (max-width: 768px) {
+  .neon-text {
+    font-size: 2rem !important;
+  }
+} */
+
