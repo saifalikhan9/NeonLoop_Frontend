@@ -1,11 +1,9 @@
 import axios from "axios";
-import { data } from "react-router-dom";
-
 const BackendUrl = import.meta.env.VITE_Url;
 const token = localStorage.getItem("accessToken");
 export const signupfn = async (data) => {
   try {
-    const res = await axios.post(`${backendUrl}/users/register`, {
+    const res = await axios.post(`${BackendUrl}/users/register`, {
       ...data,
     });
 
@@ -16,7 +14,7 @@ export const signupfn = async (data) => {
 };
 export const signInfn = async (data) => {
   try {
-    const res = await axios.post(`${backendUrl}/users/login`, {
+    const res = await axios.post(`${BackendUrl}/users/login`, {
       ...data,
     });
 
@@ -28,7 +26,7 @@ export const signInfn = async (data) => {
 
 export const cartfn = async (data) => {
   try {
-    const res = await axios.post(`${backendUrl}/cart/addToCart`, data, {
+    const res = await axios.post(`${BackendUrl}/cart/addToCart`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "multipart/form-data",
@@ -45,7 +43,7 @@ export const cartfn = async (data) => {
 
 export const cartDatafn = async () => {
   try {
-    const res = await axios.get(`${backendUrl}/cart/items`, {
+    const res = await axios.get(`${BackendUrl}/cart/items`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -60,7 +58,7 @@ export const cartDatafn = async () => {
 };
 export const deletefn = async (id) => {
   try {
-    const res = await axios.delete(`${backendUrl}/cart/delete/${id}`, {
+    const res = await axios.delete(`${BackendUrl}/cart/delete/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -75,7 +73,7 @@ export const deletefn = async (id) => {
 
 export const addressfn = async (data) => {
   try {
-    const res = await axios.post(`${backendUrl}/address/addAddress`, data, {
+    const res = await axios.post(`${BackendUrl}/address/addAddress`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -90,7 +88,7 @@ export const addressfn = async (data) => {
 };
 export const getAddress = async () => {
   try {
-    const res = await axios.get(`${backendUrl}/address/getAllAddress`, {
+    const res = await axios.get(`${BackendUrl}/address/getAllAddress`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -105,7 +103,7 @@ export const getAddress = async () => {
 };
 export const deleteAddress = async (id) => {
   try {
-    const res = await axios.delete(`${backendUrl}/address/delete/${id}`, {
+    const res = await axios.delete(`${BackendUrl}/address/delete/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -118,7 +116,7 @@ export const deleteAddress = async (id) => {
 export const editAddress = async (id, data) => {
   try {
     const res = await axios.put(
-      `${backendUrl}/address/editAddress/${id}`,
+      `${BackendUrl}/address/editAddress/${id}`,
       data,
       {
         headers: {
@@ -135,7 +133,7 @@ export const editAddress = async (id, data) => {
 
 export const fetchApiKey = async () => {
   try {
-    const res = await axios.get(`${backendUrl}/payment/apiKey`, {
+    const res = await axios.get(`${BackendUrl}/payment/apiKey`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -149,7 +147,7 @@ export const fetchApiKey = async () => {
 
 export const orderFetch = async () => {
   try {
-    const res = await axios.get(`${backendUrl}/payment/userOrder`, {
+    const res = await axios.get(`${BackendUrl}/payment/userOrder`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -164,7 +162,7 @@ export const orderFetch = async () => {
 export const clearcart = async () => {
   
   try {
-    const res = await axios.delete(`${backendUrl}/cart/clear`, {
+    const res = await axios.delete(`${BackendUrl}/cart/clear`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -15,6 +15,8 @@ export default function Signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+   
+    
 
     const formData = {
       email: emailRef.current.value,
@@ -33,9 +35,11 @@ export default function Signin() {
           // localStorage.setItem("email", response?.data?.loggedInUser.email);
           // localStorage.setItem("phone", response?.data?.loggedInUser.phone);
           setUser(response?.data?.loggedInUser);
+          console.log("clicked");
           navigate("/", { replace: true });
           window.location.reload();
           return response?.message || "Login successful!";
+         
         } else {
           throw new Error(response.response.data.message);
         }
