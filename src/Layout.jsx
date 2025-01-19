@@ -1,8 +1,8 @@
 import React from "react";
+import "./App.css"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Separator } from "./components/ui/separator";
-import "./app.css";
 import { Outlet } from "react-router-dom";
 import { ContextProvider } from "./components/Context/ContextProvider";
 
