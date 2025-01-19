@@ -47,7 +47,7 @@ const PayButn = ({ orderData }) => {
 
     try {
       const res = await axios.post(
-        `${BackendUrl}payment/pay`,
+        `${BackendUrl}/payment/pay`,
         {
           totalAmount,
           selectedAddress,
@@ -83,7 +83,7 @@ const PayButn = ({ orderData }) => {
 
           try {
             const res = await axios.post(
-              `${BackendUrl}payment/verify`,
+              `${BackendUrl}/payment/verify`,
               paymentData,
               {
                 headers: {
